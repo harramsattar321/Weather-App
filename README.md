@@ -8,7 +8,6 @@ A sleek and responsive web application that displays real-time weather informati
 
 - 🌍 Search weather by city name  
 - ⏱️ Real-time current weather details  
-- 📆 5-day weather forecast with icons  
 - 🎨 Dynamic backgrounds based on weather conditions  
 - 📱 Responsive design for mobile and desktop  
 
