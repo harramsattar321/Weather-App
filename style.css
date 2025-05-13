@@ -1,0 +1,463 @@
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Quicksand', sans-serif;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background-image: url('https://i.imgur.com/YEoEJCT.jpg');
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  padding: 20px;
+  position: relative;
+}
+
+body::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: -1;
+}
+
+.container {
+  position: relative;
+  width: 90%;
+  max-width: 850px;
+  min-height: auto;
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(20px);
+  border-radius: 20px;
+  box-shadow: 0 25px 45px rgba(0, 0, 0, 0.2);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  overflow: hidden;
+}
+
+.left-panel {
+  padding: 25px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  background: rgba(255, 255, 255, 0.05);
+  border-right: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.right-panel {
+  padding: 25px;
+  display: flex;
+  flex-direction: column;
+}
+
+.search-box {
+  position: relative;
+  width: 100%;
+  margin-bottom: 30px;
+}
+
+.search-box input {
+  width: 100%;
+  height: 50px;
+  border: none;
+  outline: none;
+  background: rgba(255, 255, 255, 0.2);
+  padding: 5px 60px 5px 15px;
+  border-radius: 10px;
+  color: #fff;
+  font-size: 16px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+}
+
+.search-box input::placeholder {
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.search-box button {
+  position: absolute;
+  right: 0;
+  top: 0;
+  height: 50px;
+  width: 50px;
+  background: rgba(0, 0, 0, 0.2);
+  border: none;
+  border-radius: 0 10px 10px 0;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: 0.3s;
+}
+
+.search-box button:hover {
+  background: rgba(0, 0, 0, 0.4);
+}
+
+.search-box button i {
+  color: #fff;
+  font-size: 20px;
+}
+
+.weather-date-time {
+  color: rgba(255, 255, 255, 0.8);
+  font-size: 14px;
+  font-weight: 300;
+  letter-spacing: 1px;
+  margin-bottom: 20px;
+}
+
+.weather-main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.weather-icon {
+  width: 120px;
+  height: 120px;
+  margin-bottom: 10px;
+  filter: drop-shadow(0 0 20px rgba(255, 255, 255, 0.3));
+}
+
+.city-name {
+  color: #fff;
+  font-size: 24px;
+  font-weight: 600;
+  margin-bottom: 15px;
+  letter-spacing: 1px;
+}
+
+.temperature {
+  color: #fff;
+  font-size: 50px;
+  font-weight: 700;
+  margin-bottom: 5px;
+  text-shadow: 0 0 20px rgba(255, 255, 255, 0.5);
+  position: relative;
+}
+
+.temperature span {
+  position: absolute;
+  font-size: 28px;
+  top: 10px;
+  margin-left: 5px;
+}
+
+.description {
+  color: rgba(255, 255, 255, 0.9);
+  font-size: 18px;
+  font-weight: 500;
+  text-transform: capitalize;
+  letter-spacing: 1px;
+}
+
+.weather-stats {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 15px;
+  margin-top: 20px;
+}
+
+.weather-stats-row {
+  margin-top: 15px;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 15px;
+}
+
+.weather-stat {
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 15px;
+  padding: 15px;
+  display: flex;
+  align-items: center;
+  transition: transform 0.3s, background 0.3s;
+}
+
+.weather-stat:hover {
+  transform: translateY(-5px);
+  background: rgba(255, 255, 255, 0.15);
+}
+
+.stat-icon {
+  background: rgba(255, 255, 255, 0.2);
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-right: 15px;
+}
+
+.stat-icon i {
+  font-size: 24px;
+  color: #fff;
+}
+
+.stat-info {
+  display: flex;
+  flex-direction: column;
+}
+
+.stat-value {
+  color: #fff;
+  font-size: 18px;
+  font-weight: 600;
+  margin-bottom: 5px;
+}
+
+.stat-name {
+  color: rgba(255, 255, 255, 0.7);
+  font-size: 12px;
+  font-weight: 400;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.forecast-section {
+  margin-top: 30px;
+}
+
+.section-title {
+  color: rgba(255, 255, 255, 0.8);
+  font-size: 14px;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-bottom: 15px;
+  display: flex;
+  align-items: center;
+}
+
+.section-title::after {
+  content: '';
+  flex: 1;
+  height: 1px;
+  background: rgba(255, 255, 255, 0.3);
+  margin-left: 10px;
+}
+
+.forecast-items {
+  display: flex;
+  overflow-x: auto;
+  gap: 15px;
+  padding-bottom: 15px;
+}
+
+.forecast-items::-webkit-scrollbar {
+  height: 5px;
+}
+
+.forecast-items::-webkit-scrollbar-track {
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 10px;
+}
+
+.forecast-items::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.3);
+  border-radius: 10px;
+}
+
+.forecast-item {
+  flex: 0 0 auto;
+  width: 90px;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 15px;
+  padding: 15px 10px;
+  text-align: center;
+}
+
+.forecast-time {
+  color: rgba(255, 255, 255, 0.8);
+  font-size: 12px;
+  font-weight: 500;
+  margin-bottom: 10px;
+}
+
+.forecast-icon {
+  width: 40px;
+  height: 40px;
+  margin: 0 auto 10px;
+}
+
+.forecast-temp {
+  color: #fff;
+  font-size: 16px;
+  font-weight: 600;
+}
+
+.not-found {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background: rgba(0, 0, 0, 0.8);
+  border-radius: 20px;
+  z-index: 10;
+  opacity: 0;
+  visibility: hidden;
+  transition: 0.5s;
+}
+
+.not-found.active {
+  opacity: 1;
+  visibility: visible;
+}
+
+.not-found img {
+  width: 150px;
+  margin-bottom: 20px;
+}
+
+.not-found p {
+  color: #fff;
+  font-size: 20px;
+  font-weight: 500;
+  text-align: center;
+}
+
+.not-found button {
+  margin-top: 20px;
+  padding: 10px 25px;
+  background: rgba(255, 255, 255, 0.2);
+  border: none;
+  border-radius: 50px;
+  color: #fff;
+  font-size: 16px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.not-found button:hover {
+  background: rgba(255, 255, 255, 0.3);
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .container {
+    grid-template-columns: 1fr;
+    width: 95%;
+    max-height: 95vh; 
+    overflow-y: auto; 
+  }
+  
+  .left-panel {
+    padding: 20px;
+    border-right: none;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  }
+  
+  .right-panel {
+    padding: 20px;
+  }
+  
+  .weather-stats {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Weather animation */
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+.weather-icon {
+  animation: float 3s ease-in-out infinite;
+}
+
+/* Loading animation */
+.loading {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.7);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 10;
+  border-radius: 20px;
+  opacity: 0;
+  visibility: hidden;
+  transition: 0.3s;
+}
+
+.loading.active {
+  opacity: 1;
+  visibility: visible;
+}
+
+.loader {
+  width: 48px;
+  height: 48px;
+  border: 5px solid #fff;
+  border-bottom-color: transparent;
+  border-radius: 50%;
+  display: inline-block;
+  box-sizing: border-box;
+  animation: rotation 1s linear infinite;
+}
+
+@keyframes rotation {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+/* Add this gorgeous reflection effect */
+.reflection {
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: linear-gradient(
+    45deg,
+    rgba(255, 255, 255, 0) 0%,
+    rgba(255, 255, 255, 0.015) 50%,
+    rgba(255, 255, 255, 0) 100%
+  );
+  pointer-events: none;
+  transform: rotate(45deg);
+  z-index: 100;
+  animation: reflection 20s linear infinite;
+}
+
+@keyframes reflection {
+  0% {
+    transform: rotate(0deg) translate(-50%, -50%);
+  }
+  100% {
+    transform: rotate(360deg) translate(-50%, -50%);
+  }
+}

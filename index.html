@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>SkyVue | Premium Weather Forecast</title>
+  <link rel="stylesheet" href="style.css">
+  <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet">
+  <link rel="icon" href="https://i.imgur.com/XZCJnQl.png" type="image/png">
+</head>
+<body>
+  <div class="container">
+    <!-- Reflection effect -->
+    <div class="reflection"></div>
+    
+    <!-- Left panel with main weather info -->
+    <div class="left-panel">
+      <div class="weather-main">
+        <img src="weather.png" alt="Weather icon" class="weather-icon" id="weather-icon">
+        <h2 class="city-name" id="city-name">City, Country</h2>
+        <p class="temperature" id="temperature">0<span>°C</span></p>
+        <p class="description" id="weather-description">Weather description</p>
+      </div>
+    </div>
+    
+    <!-- Right panel with search and details -->
+    <div class="right-panel">
+      <div class="search-box">
+        <input id="search-input" type="text" placeholder="Search city...">
+        <button id="search-btn"><i class='bx bx-search'></i></button>
+      </div>
+      
+      <div class="weather-date-time" id="date-time">
+        Loading current date and time...
+      </div>
+      
+      <div class="weather-stats">
+        <div class="weather-stat">
+          <div class="stat-icon">
+            <i class='bx bx-water'></i>
+          </div>
+          <div class="stat-info">
+            <span class="stat-value" id="humidity">0%</span>
+            <span class="stat-name">Humidity</span>
+          </div>
+        </div>
+        
+        <div class="weather-stat">
+          <div class="stat-icon">
+            <i class='bx bx-wind'></i>
+          </div>
+          <div class="stat-info">
+            <span class="stat-value" id="wind-speed">0 km/h</span>
+            <span class="stat-name">Wind Speed</span>
+          </div>
+        </div>
+        
+        <div class="weather-stat">
+          <div class="stat-icon">
+            <i class='bx bx-sun'></i>
+          </div>
+          <div class="stat-info">
+            <span class="stat-value" id="feels-like">0°C</span>
+            <span class="stat-name">Feels Like</span>
+          </div>
+        </div>
+        
+        <div class="weather-stat">
+          <div class="stat-icon">
+            <i class='bx bx-cloud'></i>
+          </div>
+          <div class="stat-info">
+            <span class="stat-value" id="cloud-cover">0%</span>
+            <span class="stat-name">Cloud Cover</span>
+          </div>
+        </div>
+      </div>
+      
+      <div class="weather-stats-row">
+        <div class="weather-stat">
+          <div class="stat-icon">
+            <i class='bx bx-tachometer'></i>
+          </div>
+          <div class="stat-info">
+            <span class="stat-value" id="pressure">0 hPa</span>
+            <span class="stat-name">Pressure</span>
+          </div>
+        </div>
+        
+        <div class="weather-stat">
+          <div class="stat-icon">
+            <i class='bx bx-low-vision'></i>
+          </div>
+          <div class="stat-info">
+            <span class="stat-value" id="visibility">0 km</span>
+            <span class="stat-name">Visibility</span>
+          </div>
+        </div>
+      </div>
+      
+      <div class="forecast-section">
+        <h3 class="section-title">Daily Forecast</h3>
+        <div class="forecast-items" id="forecast-container">
+          <!-- Forecast items will be added here dynamically -->
+        </div>
+      </div>
+    </div>
+    
+    <!-- Not found error screen -->
+    <div class="not-found">
+      <img src="error404.png" alt="Location not found">
+      <p>Oops! We couldn't find that location.</p>
+      <button id="try-again-btn">Try Again</button>
+    </div>
+    
+    <!-- Loading animation -->
+    <div class="loading">
+      <span class="loader"></span>
+    </div>
+  </div>
+  
+  <script src="app.js"></script>
+</body>
+</html>
